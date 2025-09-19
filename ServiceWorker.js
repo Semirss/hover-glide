@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-Havoc Glide-0.1";
 const contentToCache = [
-    "Build/Build.loader.js",
-    "Build/Build.framework.js.unityweb",
-    "Build/Build.data.unityweb",
-    "Build/Build.wasm.unityweb",
+    "Build/hover glide.loader.js",
+    "Build/hover glide.framework.js.unityweb",
+    "Build/hover glide.data.unityweb",
+    "Build/hover glide.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
