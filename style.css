@@ -1,0 +1,98 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000 url("TemplateData/unnamed.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* === Loading Screen === */
+#loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.loading-content {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+#custom-logo {
+  width: 60%;
+  max-width: 220px;
+  margin-bottom: 20px;
+}
+
+#loading-bar {
+  width: 100%;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px auto;
+}
+
+#progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00ffc3, #0077ff);
+  transition: width 0.25s;
+}
+
+#loading-text {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* === Unity Canvas === */
+#unity-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* === Responsive Scaling === */
+@media (max-width: 768px) {
+  #custom-logo {
+    width: 50%;
+    max-width: 180px;
+  }
+  #loading-bar {
+    height: 14px;
+  }
+  #loading-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #custom-logo {
+    width: 65%;
+    max-width: 150px;
+  }
+  #loading-bar {
+    height: 12px;
+  }
+  #loading-text {
+    font-size: 12px;
+  }
+}
