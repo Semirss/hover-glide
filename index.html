@@ -22,19 +22,19 @@
   <canvas id="unity-canvas" tabindex="0"></canvas>
 
  <!-- Unity Loader -->
-  <script src="Build/hover glide.loader.js"></script>
+  <script src="Build/6df189e2dfd087740758f60cbb735c0c.loader.js"></script>
 
   <script>
     const canvas = document.querySelector("#unity-canvas");
 
     createUnityInstance(canvas, {
-      dataUrl: "Build/hover glide.data.unityweb",
-      frameworkUrl: "Build/hover glide.framework.js.unityweb",
-      codeUrl: "Build/hover glide.wasm.unityweb",
+      dataUrl: "Build/d66cf6ce392512951bb96783a12e6889.data.unityweb",
+      frameworkUrl: "Build/e97b353ac53704a0a74e96398d8f5819.framework.js.unityweb",
+      codeUrl: "Build/bb9d83e1f166dece5a9cbe564ad6c30a.wasm.unityweb",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "MyCompany",
       productName: "Hover Glide",
-      productVersion: "1.0",
+      productVersion: "2.0",
     }, (progress) => {
       document.querySelector("#progress").style.width = (progress * 100) + "%";
     }).then((unityInstance) => {

@@ -1,0 +1,16 @@
+{
+  "headers": [
+    {
+      "source": "/Build/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, max-age=0" }
+      ]
+    },
+    {
+      "source": "/(.*\\.html)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, max-age=0" }
+      ]
+    }
+  ]
+}
