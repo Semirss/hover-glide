@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>%UNITY_WEB_NAME%</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Loading Screen -->
   <div id="loading-screen">
     <div class="loading-content">
       <img id="custom-logo" src="TemplateData/Remove background project (10).png" alt="Game Logo">
@@ -18,22 +19,28 @@
   </div>
 
   <!-- Unity Canvas -->
-  <canvas id="unity-canvas"></canvas>
+  <canvas id="unity-canvas" tabindex="0"></canvas>
 
-  <script src="%UNITY_WEBGL_LOADER_URL%"></script>
+ <!-- Unity Loader -->
+  <script src="Build/hover glide.loader.js"></script>
+
   <script>
-    createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "%UNITY_WEBGL_DATA_URL%",
-      frameworkUrl: "%UNITY_WEBGL_FRAMEWORK_URL%",
-      codeUrl: "%UNITY_WEBGL_CODE_URL%",
+    const canvas = document.querySelector("#unity-canvas");
+
+    createUnityInstance(canvas, {
+      dataUrl: "Build/hover glide.data.unityweb",
+      frameworkUrl: "Build/hover glide.framework.js.unityweb",
+      codeUrl: "Build/hover glide.wasm.unityweb",
       streamingAssetsUrl: "StreamingAssets",
-      companyName: "%COMPANY_NAME%",
-      productName: "%PRODUCT_NAME%",
-      productVersion: "%PRODUCT_VERSION%",
+      companyName: "MyCompany",
+      productName: "Hover Glide",
+      productVersion: "1.0",
     }, (progress) => {
       document.querySelector("#progress").style.width = (progress * 100) + "%";
     }).then((unityInstance) => {
       document.querySelector("#loading-screen").style.display = "none";
+    }).catch((message) => {
+      alert("❌ Unity failed to load: " + message);
     });
   </script>
 </body>
